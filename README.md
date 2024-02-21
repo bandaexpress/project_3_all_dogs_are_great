@@ -1,6 +1,9 @@
 # project_3_all_dogs_are_great
 Project 3 from Columbia University Data Analytics Bootcamp
 
+# Authors:
+Anthony Banda, Daniel Kenet, Emily Sims, and Jarret Baum. 
+
 # Data Visualization Track Requirements (75 points)
 
 ## Data and Delivery (20 points)
