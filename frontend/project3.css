@@ -1,0 +1,13 @@
+body  {
+    background-image: url("background2.jpg");
+    background-color: #cccccc;
+    background-size: cover;
+  }
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
