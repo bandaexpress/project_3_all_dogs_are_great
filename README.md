@@ -6,6 +6,7 @@ Anthony Banda, Daniel Kenet, Emily Sims, and Jarret Baum.
 
 # Project Background:
 Using The Dog Api (https://www.thedogapi.com/), our team created visualizations displaying various characteristics on over 200 dog breeds. Users can select any of those 200+ breed options on the dropdown menu, which will create a radar chart based on the selected breed. The radar chart shows where the dog breed ranks on a 0-10 scale (0 being the lowest, 10 being the hihest) based on height, weight, and life span characteristics.  
+<img src="https://github.com/bandaexpress/project_3_all_dogs_are_great/blob/ce5004bc6d247977e5e1baf6f198523feb79de6a/img/radar%20chart%20screenshot.png">
 
 We created a bar chart illustrating the most dominant dog traits among the 200+ breeds in the dataset. 
 
