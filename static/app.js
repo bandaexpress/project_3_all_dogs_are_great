@@ -245,6 +245,14 @@ function displayMatchingBreeds(breeds) {
   const list = document.getElementById('matchingBreeds');
   list.innerHTML = ''; // Clear previous results
 
+  if (breeds.length === 0) {
+    // If no matches found, display a message
+    const listItem = document.createElement('li');
+    listItem.textContent = 'No matches found';
+    list.appendChild(listItem);
+    return;
+  }
+
   breeds.forEach(breed => {
     const listItem = document.createElement('li');
     listItem.textContent = breed.name;
