@@ -1,3 +1,6 @@
+//Sourced from: The Dog API https://thedogapi.com
+// json with dog breed info https://api.thedogapi.com/v1/breeds/
+
 // Function to populate the dropdown with breed names
 function populateDropdown(data) {
     var dropdown = document.getElementById("breedsDropdown");
