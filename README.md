@@ -4,7 +4,16 @@ Project 3 from Columbia University Data Analytics Bootcamp
 # Authors:
 Anthony Banda, Daniel Kenet, Emily Sims, and Jarret Baum. 
 
-# Data Visualization Track Requirements (75 points)
+# Project Background:
+Using The Dog Api (https://www.thedogapi.com/), our team created visualizations displaying various characteristics on over 200 dog breeds. Users can select any of those 200+ breed options on the dropdown menu, which will create a radar chart based on the selected breed. The radar chart shows where the dog breed ranks on a 0-10 scale (0 being the lowest, 10 being the hihest) based on height, weight, and life span characteristics.  
+
+We created a bar chart illustrating the most dominant dog traits among the 200+ breeds in the dataset. 
+
+Next, our page displays a scatter plot charting where each breed lies according height and weight. 
+
+Finally, our group created a temperment filter. Users can select two traits, from a dropdown listing all the temperament attributes in the dataset, and it will return what breeds have both those attributes. 
+
+# Data Visualization Track Requirements: (75 points)
 
 ## Data and Delivery (20 points)
 - The dataset contains at least 100 unique records. (5 points) ✓
