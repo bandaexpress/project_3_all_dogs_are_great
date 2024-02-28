@@ -48,3 +48,7 @@ Finally, our group created a temperment filter. Users can select two traits, fro
 - The content is relevant to the project. (5 points)
 - The presentation maintains audience interest. (5 points)
 - Content, transitions, and conclusions flow smoothly within any time restrictions. (10 points)
+
+# References: 
+API used: https://www.thedogapi.com/
+Documentation referenced: https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=bOoHBz-8t
