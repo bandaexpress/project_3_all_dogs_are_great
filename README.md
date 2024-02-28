@@ -50,5 +50,5 @@ Finally, our group created a temperment filter. Users can select two traits, fro
 - Content, transitions, and conclusions flow smoothly within any time restrictions. (10 points)
 
 # References: 
-API used: https://www.thedogapi.com/
-Documentation referenced: https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=bOoHBz-8t
+- API used: https://www.thedogapi.com/
+- Documentation referenced: https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=bOoHBz-8t
