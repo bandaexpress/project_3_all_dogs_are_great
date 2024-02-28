@@ -42,6 +42,31 @@
         <canvas id="scatterPlot" width="400" height="400"></canvas>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Filter Dog Breeds by Temperament</h3>
+        <label for="temperament1">Temperament 1:</label>
+        <select id="temperament1">
+          <option value="">Select temperament</option>
+        </select>
+        <br>
+        <label for="temperament2">Temperament 2:</label>
+        <select id="temperament2">
+          <option value="">Select temperament</option>
+        </select>
+        <br>
+        <button onclick="filterBreedsByTemperament()">Find Matches</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Matching Dog Breeds:</h3>
+          <ul id="matchingBreeds"></ul>
+        </div>
+      </div>
+    </div>
+    </div>
   </div>
 
   <script src="https://d3js.org/d3.v7.min.js"></script>
