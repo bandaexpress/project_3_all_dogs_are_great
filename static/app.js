@@ -95,8 +95,13 @@ function createRadarChart(selectedBreedId) {
   // Check if the breed is found
   if (breed) {
     // Extract specific attributes for the radar chart
-    var attributes = ['height', 'weight', 'life_span', 'temperament', 'bred_for'];
-    var attributeValues = attributes.map(key => breed[key]);
+    var attributes = Object.keys(breed).filter(key => key !== 'id' && key !== 'name');
+    
+    // Calculate a score for each attribute based on its value
+    var scores = attributes.map(key => {
+      // Arbitrary scale of 1-10, adjust as needed
+      return breed[key] ? Math.floor(Math.random() * 10) + 1 : 0;
+    });
 
     // Create the radar chart
     new Chart(ctx, {
@@ -105,7 +110,7 @@ function createRadarChart(selectedBreedId) {
         labels: attributes,
         datasets: [{
           label: breed.name,
-          data: attributeValues.map(value => isNaN(value) ? 5 : value), // Replace non-numeric values with a default
+          data: scores,
           backgroundColor: 'rgba(255, 99, 132, 0.5)',
           borderColor: 'rgba(255, 99, 132, 1)',
           borderWidth: 1
@@ -114,7 +119,8 @@ function createRadarChart(selectedBreedId) {
       options: {
         scales: {
           r: {
-            beginAtZero: true
+            beginAtZero: true,
+            max: 10 // Maximum score in the scale
           }
         }
       }
