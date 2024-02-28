@@ -17,6 +17,10 @@ Next, our page displays a scatter plot charting where each breed lies according 
 Finally, our group created a temperment filter. Users can select two traits, from a dropdown listing all the temperament attributes in the dataset, and it will return what breeds have both those attributes. 
 <img src="https://github.com/bandaexpress/project_3_all_dogs_are_great/blob/554a37d4d4d29b255b5e51222d4b0366acd7dd16/img/trait%20screenshot.png">
 
+# Instructions: 
+1. Go to ...
+2. Select a breed from the drop down menu
+
 # Data Visualization Track Requirements: (75 points)
 
 ## Data and Delivery (20 points)
