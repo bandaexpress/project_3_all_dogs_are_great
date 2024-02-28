@@ -4,7 +4,16 @@ Project 3 from Columbia University Data Analytics Bootcamp
 # Authors:
 Anthony Banda, Daniel Kenet, Emily Sims, and Jarret Baum. 
 
-# Data Visualization Track Requirements (75 points)
+# Project Background:
+Using The Dog Api (https://www.thedogapi.com/), our team created visualizations displaying various characteristics on over 200 dog breeds. Users can select any of those 200+ breed options on the dropdown menu, which will create a radar chart based on the selected breed. The radar chart shows where the dog breed ranks on a 0-10 scale (0 being the lowest, 10 being the hihest) based on height, weight, and life span characteristics.  
+
+We created a bar chart illustrating the most dominant dog traits among the 200+ breeds in the dataset. 
+
+Next, our page displays a scatter plot charting where each breed lies according height and weight. 
+
+Finally, our group created a temperment filter. Users can select two traits, from a dropdown listing all the temperament attributes in the dataset, and it will return what breeds have both those attributes. 
+
+# Data Visualization Track Requirements: (75 points)
 
 ## Data and Delivery (20 points)
 - The dataset contains at least 100 unique records. (5 points) ✓
@@ -28,29 +37,6 @@ Anthony Banda, Daniel Kenet, Emily Sims, and Jarret Baum.
   - HTML menus, dropdowns, and/or textboxes to display JavaScript-powered visualizations
   - Flask backend with interactive API routes that serve back Python or JavaScript created plots
   - Visualizations created from user-selected filtered data
-  - 
-# Data Engineering Track Requirements (75 points)
-
-## Database Design (40 points)
-- The project uses ETL workflows to ingest data into the database. (10 points)
-- The original dataset(s) are transformed prior to storing it in the database. (5 points)
-- A database is used to house the data (SQL, MongoDB, SQLite, etc.). (5 points)
-- The database has at least two tables (SQL) or collections (NoSQL). (5 points)
-- The project documents the choice of the database used and why. (5 points)
-- The project includes documentation of the ETL workflow with diagrams or ERD. (10 points)
-
-## Data and Delivery (35 points)
-- The database contains at least 100 unique records. (5 points)
-- The project uses one additional library not covered in class related to data engineering. (10 points)
-- The project includes a method for reading data from the database and displaying it for future use, such as: (10 points)
-  - Pandas DataFrame
-  - Flask API with JSON output
-- The GitHub repo has a README.md that includes the following: (10 points)
-  - An overview of the project and its purpose
-  - Instructions on how to use and interact with the project
-  - At least one paragraph summarizing efforts for ethical considerations made in the project
-  - References for the data source(s)
-  - References for any code used that is not your own
   
 # Both Track Requirements
 ## Group Presentation (25 points)
