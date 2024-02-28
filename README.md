@@ -9,7 +9,7 @@ Anthony Banda, Daniel Kenet, Emily Sims, and Jarret Baum.
 ## Data and Delivery (20 points)
 - The dataset contains at least 100 unique records. (5 points) ✓
 - A database is used to house the data (SQL, MongoDB, SQLite, etc.). (5 points) -not needed
-- The GitHub repo has a README.md that includes the following: (10 points) ✓
+- The GitHub repo has a README.md that includes the following: (10 points) 
   - An overview of the project and its purpose
   - Instructions on how to use and interact with the project
   - At least one paragraph summarizing efforts for ethical considerations made in the project
