@@ -226,28 +226,31 @@ document.getElementById('traitDropdown').addEventListener('change', onTraitSelec
 
 // Function to populate dropdowns with unique temperaments
 function populateTemperamentDropdowns(data) {
-    const allTemperaments = new Set();
-    // Extract unique temperaments from the data
-    data.forEach(breed => {
-        const temperament = breed.temperament;
-        if (temperament) {
-            const temperaments = temperament.split(',').map(t => t.trim());
-            temperaments.forEach(t => allTemperaments.add(t));
-        }
-    });
-    // Populate dropdowns with unique temperaments
-    const dropdown1 = document.getElementById('temperament1');
-    const dropdown2 = document.getElementById('temperament2');
-    allTemperaments.forEach(temperament => {
-        const option1 = document.createElement('option');
-        option1.text = temperament;
-        option1.value = temperament;
-        dropdown1.add(option1);
-        const option2 = document.createElement('option');
-        option2.text = temperament;
-        option2.value = temperament;
-        dropdown2.add(option2);
-    });
+  const allTemperaments = new Set();
+  // Extract unique temperaments from the data
+  data.forEach(breed => {
+      const temperament = breed.temperament;
+      if (temperament) {
+          const temperaments = temperament.split(',').map(t => t.trim());
+          temperaments.forEach(t => allTemperaments.add(t));
+      }
+  });
+  // Convert set to array and sort alphabetically
+  const sortedTemperaments = Array.from(allTemperaments).sort();
+  
+  // Populate dropdowns with sorted temperaments
+  const dropdown1 = document.getElementById('temperament1');
+  const dropdown2 = document.getElementById('temperament2');
+  sortedTemperaments.forEach(temperament => {
+      const option1 = document.createElement('option');
+      option1.text = temperament;
+      option1.value = temperament;
+      dropdown1.add(option1);
+      const option2 = document.createElement('option');
+      option2.text = temperament;
+      option2.value = temperament;
+      dropdown2.add(option2);
+  });
 }
 
 // Fetch JSON data and populate dropdowns
