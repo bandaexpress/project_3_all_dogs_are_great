@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Project 3</title>
+  <link rel="stylesheet" href="./static/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="intro">
+        <h1>The perfect puppy for you!</h1>
+        <p>Use the interactive guide below to find the perfect pup for your lifestyle.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Select a dog breed:</h3>
+        <select id="breedsDropdown">
+          <option value="">Select a breed</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <h3>Radar Chart</h3>
+        <canvas id="radarChart" width="400" height="400"></canvas>
+      </div>
+    </div>
+      <div class="col-md-4">
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Distribution of Dominant Traits</h3>
+        <div id="dominantTraitsChart"></div>
+          <select id="traitDropdown">    
+          </select>
+        </div>
+        <div class="col-md-6">
+          <div id="traitBreedList"></div>
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Scatter Plot</h3>
+        <canvas id="scatterPlot" width="400" height="400"></canvas>
+      </div>
+    </div>
+    <div class="row">
+      <div class="traitfilter">
+        <h3>Filter Dog Breeds by Temperament</h3>
+        <label for="temperament1">Temperament 1:</label>
+        <select id="temperament1">
+          <option value="">Select temperament</option>
+        </select>
+        <br>
+        <label for="temperament2">Temperament 2:</label>
+        <select id="temperament2">
+          <option value="">Select temperament</option>
+        </select>
+        <br>
+        <button onclick="filterBreedsByTemperament()">Find Matches</button>
+          <h3>Matching Dog Breeds:</h3>
+          <ul id="matchingBreeds"></ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+      </div>
+    </div>
+  </div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./static/app.js"></script>
+</body>
+</html>
