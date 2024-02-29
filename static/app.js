@@ -13,17 +13,39 @@ function populateDropdown(data) {
     });
 }
 
-
 // Function to plot the distribution of dominant traits
-function plotDominantTraits(sortedDominantTraits) {
-    const dominantTraitsChartDiv = document.getElementById('dominantTraitsChart');
-    const traitKeys = Object.keys(sortedDominantTraits);
-    const traitValues = Object.values(sortedDominantTraits);
+function plotDominantTraits(data) {
+    // Collect all traits from all breeds into a single array
+    const allTraits = [];
+    data.forEach(breed => {
+        const temperament = breed.temperament;
+        if (temperament) {
+            const traits = temperament.split(',').map(t => t.trim());
+            allTraits.push(...traits);
+        }
+    });
 
-    // Extract breed list information for each trait
-    const breedLists = traitKeys.map(trait => {
-        const breedList = firstTemperamentGroups[trait] || [];
-        return breedList.join('<br>'); // Convert breed list to HTML format for Plotly tooltip
+    // Count the occurrences of each trait
+    const traitCounts = {};
+    allTraits.forEach(trait => {
+        traitCounts[trait] = (traitCounts[trait] || 0) + 1;
+    });
+
+    // Convert the counts into an array of objects for sorting
+    const traitEntries = Object.entries(traitCounts);
+
+    // Sort the traits based on their counts
+    traitEntries.sort((a, b) => b[1] - a[1]);
+
+    // Select the top traits to display in the chart
+    const topTraits = traitEntries.slice(0, 25); // Limiting to top 10
+
+    const traitKeys = topTraits.map(entry => entry[0]);
+    const traitValues = topTraits.map(entry => entry[1]);
+    const breedLists = topTraits.map(entry => {
+        const trait = entry[0];
+        const breedList = data.filter(breed => breed.temperament && breed.temperament.includes(trait)).map(breed => breed.name);
+        return breedList.join('<br>');
     });
 
     const dominantTraitsData = [{
@@ -176,36 +198,8 @@ fetch('./static/dog_data.json')
         // Call the function to populate the dropdown with the loaded data
         populateDropdown(data);
 
-        // Populate the first temperament groups dictionary
-        data.forEach(dog => {
-            const name = dog.name;
-            const temperaments = dog.temperament;
-            if (typeof temperaments === 'string') {
-                const firstTemperament = temperaments.split(",")[0].trim();
-                if (!(firstTemperament in firstTemperamentGroups)) {
-                    firstTemperamentGroups[firstTemperament] = [name];
-                } else {
-                    firstTemperamentGroups[firstTemperament].push(name);
-                }
-            }
-        });
-
         // Calculate the count of breeds for each dominant trait
-        const dominantTraitCounts = {};
-        Object.entries(firstTemperamentGroups).forEach(([temperament, breeds]) => {
-            if (breeds.length >= 5) {
-                dominantTraitCounts[temperament] = breeds.length;
-            }
-        });
-
-        // Sort the dominant traits based on their counts
-        const sortedDominantTraits = Object.fromEntries(
-            Object.entries(dominantTraitCounts)
-                .sort(([, a], [, b]) => b - a)
-        );
-
-        // Plot the distribution of dominant traits
-        plotDominantTraits(sortedDominantTraits);
+        plotDominantTraits(data);
 
         // Create a height/weight scatter plot
         createScatterPlot(data);
@@ -217,35 +211,33 @@ fetch('./static/dog_data.json')
 // Attach the onBreedSelectChange function to the change event of the dropdown
 document.getElementById('breedsDropdown').addEventListener('change', onBreedSelectChange);
 
-
-
 // Function to populate dropdowns with unique temperaments
 function populateTemperamentDropdowns(data) {
-  const allTemperaments = new Set();
-  // Extract unique temperaments from the data
-  data.forEach(breed => {
-      const temperament = breed.temperament;
-      if (temperament) {
-          const temperaments = temperament.split(',').map(t => t.trim());
-          temperaments.forEach(t => allTemperaments.add(t));
-      }
-  });
-  // Convert set to array and sort alphabetically
-  const sortedTemperaments = Array.from(allTemperaments).sort();
-  
-  // Populate dropdowns with sorted temperaments
-  const dropdown1 = document.getElementById('temperament1');
-  const dropdown2 = document.getElementById('temperament2');
-  sortedTemperaments.forEach(temperament => {
-      const option1 = document.createElement('option');
-      option1.text = temperament;
-      option1.value = temperament;
-      dropdown1.add(option1);
-      const option2 = document.createElement('option');
-      option2.text = temperament;
-      option2.value = temperament;
-      dropdown2.add(option2);
-  });
+    const allTemperaments = new Set();
+    // Extract unique temperaments from the data
+    data.forEach(breed => {
+        const temperament = breed.temperament;
+        if (temperament) {
+            const temperaments = temperament.split(',').map(t => t.trim());
+            temperaments.forEach(t => allTemperaments.add(t));
+        }
+    });
+    // Convert set to array and sort alphabetically
+    const sortedTemperaments = Array.from(allTemperaments).sort();
+
+    // Populate dropdowns with sorted temperaments
+    const dropdown1 = document.getElementById('temperament1');
+    const dropdown2 = document.getElementById('temperament2');
+    sortedTemperaments.forEach(temperament => {
+        const option1 = document.createElement('option');
+        option1.text = temperament;
+        option1.value = temperament;
+        dropdown1.add(option1);
+        const option2 = document.createElement('option');
+        option2.text = temperament;
+        option2.value = temperament;
+        dropdown2.add(option2);
+    });
 }
 
 // Fetch JSON data and populate dropdowns
@@ -297,5 +289,5 @@ function filterBreedsByTemperament() {
     // Sort matching breeds alphabetically by name
     matchingBreeds.sort((a, b) => (a.name > b.name) ? 1 : -1);
     // Display the top 5 matching breeds
-    displayMatchingBreeds(matchingBreeds.slice(0, 5));
+    displayMatchingBreeds(matchingBreeds.slice(0, 15));
 }
