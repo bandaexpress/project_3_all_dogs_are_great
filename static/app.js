@@ -13,10 +13,6 @@ function populateDropdown(data) {
     });
 }
 
-// Function to handle trait selection
-function onTraitSelectChange() {
-    const selectedTrait = document.getElementById('traitDropdown').value;
-}
 
 // Function to plot the distribution of dominant traits
 function plotDominantTraits(sortedDominantTraits) {
@@ -221,8 +217,7 @@ fetch('./static/dog_data.json')
 // Attach the onBreedSelectChange function to the change event of the dropdown
 document.getElementById('breedsDropdown').addEventListener('change', onBreedSelectChange);
 
-// Attach the onTraitSelectChange function to the change event of the trait dropdown
-document.getElementById('traitDropdown').addEventListener('change', onTraitSelectChange);
+
 
 // Function to populate dropdowns with unique temperaments
 function populateTemperamentDropdowns(data) {
