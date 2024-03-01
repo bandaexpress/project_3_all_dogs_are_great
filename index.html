@@ -1,39 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Project 3</title>
+  <title>Pup Finder 3000</title>
   <link rel="stylesheet" href="./static/style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="./static/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./static/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./static/favicon-16x16.png">
+  <link rel="manifest" href="./static/site.webmanifest">
 </head>
-
 <body>
-
   <div class="container">
-    <div class="row">
-      <div class="intro">
-        <h1>The perfect puppy for you!</h1>
-        <p>Use the interactive guide below to find the perfect pup for your lifestyle.</p>
-      </div>
+    <header>
+      <h1>The perfect puppy for you!</h1>
+      <p>Use the interactive guide below to find the perfect pup for your lifestyle.</p>
+      <!-- Add any additional content for your header here -->
+    </header>
+    <div class="col-md-1">
+      <h3>How much do I want the dog to shed?</h3>
+      <p>Choose from 1 (less shed) to 5 (most shed)</p>
+      <button id="sheddingButton1" class="sheddingButton" data-shedding="1">1</button><button id="sheddingButton2" class="sheddingButton" data-shedding="2">2</button><button id="sheddingButton3" class="sheddingButton" data-shedding="3">3</button><button id="sheddingButton4" class="sheddingButton" data-shedding="4">4</button><button id="sheddingButton5" class="sheddingButton" data-shedding="5">5</button>
     </div>
-    <div class="row">
-      <div class="col-md-2">
-        <h3>Select a dog breed:</h3>
-        <select id="breedsDropdown">
-          <option value="">Select a breed</option>
-        </select>
-      </div>
-      <canvas id="radarChart" width="400" height="400"></canvas>
-      <canvas id="scatterPlot" width="400" height="400"></canvas>
+    <div id="breeds-container" class="container">
+      <!-- Breed cards will be dynamically added here -->
     </div>
-
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="./static/app.js"></script>
-  </body>
-
+    <div class="col-md-1">
+      <h3>Find out:</h3> <p> What your dog was bred for | How long they'll live |  What temperaments their breed has:</p>
+      <select id="breedsDropdown" class="breedsDropdown">
+        <option value="">Find your dog!</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <h3>Radar Chart</h3>
+      <canvas id="radarChart" width= auto height= auto></canvas>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="row">
+      <div id="dominantTraitsChart"></div>
+    </div>
+    <div class="col-md-6">
+      <div id="traitBreedList"></div>
+    </div>
+    <div class="col-md-6">
+      <h3>Scatter Plot</h3>
+      <canvas id="scatterPlot" width= auto height= auto></canvas>
+    </div>
+    <div class="traitfilter">
+      <h3>Filter Dog Breeds by Temperament</h3>
+      <label for="temperament1">Temperament 1:</label>
+      <select id="temperament1">
+        <option value="">Select temperament</option>
+      </select>
+      <br>
+      <label for="temperament2">Temperament 2:</label>
+      <select id="temperament2">
+        <option value="">Select temperament</option>
+      </select>
+      <br>
+      <button onclick="filterBreedsByTemperament()">Find Matches</button>
+      <h3>Matching Dog Breeds:</h3>
+      <ul id="matchingBreeds"></ul>
+    </div>
+  </div>
+  <footer class="footer">
+    <p>&copy; <b>Columbia University</b> | <a href="https://www.engineering.columbia.edu/">Fu School of Engineering</a> | Data Analytics and Visualization Bootcamp | <a href="https://github.com/bandaexpress/project_3_all_dogs_are_great">GitHub</a> | <a href="https://api-ninjas.com/api/dogs">Dogs API</a></p>
+  </footer>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./static/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.0.6/wordcloud2.min.js"></script>
+</body>
 </html>
-
