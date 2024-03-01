@@ -1,7 +1,6 @@
 body {
   background-image: url("background2.jpg");
   background-color: #cccccc;
-  background-size: cover;
 }
 
 .container {
@@ -25,7 +24,8 @@ body {
   background: rgba(255, 255, 255, 0.9);
 }
 .scatter {
-  background: rgba(255, 255, 255, 0.9);
+  width: 5;
+  margin: 5px;
 }
 .traitfilter {
   background-color: rgb(171, 171, 243);
