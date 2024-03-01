@@ -1,146 +1,16 @@
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: rgb(255, 241, 196, .9);
-  text-align: center;
-  padding: 5px 0; /* Adjust the padding as needed */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better contrast */
-  border-radius: 20px;
-}
-
 body  {
-  background-image: url("background2.jpg");
-  background-color: #cccccc;
-  background-repeat: repeat ;
-  margin: 150px auto auto auto;
-  height: 100%;
-  font-family: "Comfortaa", sans-serif;
-}
-
-#breeds-container.container, #scatterPlot {
-background-color: #ffffff;
-}
-
-.js-plotly-plot, #scatterPlot {
-  width: 80%;
-  margin: 0 auto; /* This will center the element horizontally */
-}
-
-#radarChart {
-  background-color: #ffffff;
-}
+    background-image: url("background2.jpg");
+    background-color: #cccccc;
+    background-size: cover;
+  }
 
 .container {
-  background-color: rgba(255, 255, 255, 0.9);
-  margin: 40px auto 0;
-  width: 80%;
-  padding: 10px;
-  border-radius: 20px;
-  font-family: "Comfortaa", sans-serif;
-}
-
-.traitfilter {
-  background-color: rgba(255, 255, 255, 0.9);
-  margin: 40px auto 0;
-  width: 80%;
-  padding: 10px;
-  border-radius: 20px;
-  font-family: "Comfortaa", sans-serif;
-}
-
-
-h3 {
-  font-family: "Comfortaa", sans-serif;
-  color:black;
-  size: 16px;
-  text-align: center;
-}
-
-p {
-  font-family: "Comfortaa", sans-serif;
-  color:black;
-  size: 16px;
-  text-align: center;
-}
-
-img {
-  max-width: 70%;
-  height: auto;
-  display: block; /* Ensures proper spacing and alignment */
-  margin: 0 auto; /* Centers the image horizontally */
-  padding: 15px;
-}
-
-
-.col-md-1 {
-  text-align: center;
-  border-color: black;
-}
-
-.radarChart {
-  font-family: "Comfortaa", sans-serif;
-  color:black;
+    background: rgba(255, 255, 255, 0.9);
+    margin: auto;
+    width: 65%;
+    padding: 10px;
 }
 
 .intro {
   text-align: center;
-  font-family: "Comfortaa", sans-serif;
-  color:black;
-}
-
-.intro h1 {
-  font-weight: bold;
-}
-
-.intro:after {
-  content: '';
-  display: block;
-  border-bottom: 1px solid gray; /* Change color and style as needed */
-  margin-top: 10px; /* Adjust as needed */
-}
-
-.breed-card {
-  width: auto;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-  font-family: "Comfortaa", sans-serif;
-  background: rgba(255, 255, 255, 0.9);
-  margin: 40px auto 0;
-  padding: 10px;
-  border-radius: 20px;
-}
-
-.breed {
-  text-align: left;
-  font-family: "Comfortaa", sans-serif;
-  font-size: 16px;
-  color:black;
-  line-height: 1.7; 
-  font-weight: bold;
-  margin: auto;
-  border-radius: 20px;
-  word-wrap: break-word;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust the min and max width as needed */
-  gap: 20px; /* Adjust the gap between grid items */
-}
-
-
-.hidden {
-  display: none;
-}
-
-/* Footer styles */
-.footer {
-  text-align: center;
-  font-family: "Comfortaa", sans-serif;
-  font-size: 12px;
-  color:black;
-  margin: auto;
-  padding: 10px;
-  background-color: rgb(255, 241, 196, 0.5);
 }
