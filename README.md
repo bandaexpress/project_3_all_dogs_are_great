@@ -5,7 +5,7 @@ Project 3 from Columbia University Data Analytics Bootcamp
 Anthony Banda, Daniel Kenet, Emily Sims, and Jarret Baum. 
 
 # Project Background:
-Using The Dog Api (https://www.thedogapi.com/), our team created visualizations displaying various characteristics on over 200 dog breeds. Users can select any of those 200+ breed options on the dropdown menu, which will create a radar chart based on the selected breed. The radar chart shows where the dog breed ranks on a 0-10 scale (0 being the lowest, 10 being the hihest) based on height, weight, and life span characteristics.  
+Using The Dog Api (https://www.thedogapi.com/), our team created visualizations displaying various characteristics on over 200 dog breeds. Users can select any of those 200+ breed options on the dropdown menu, which will create a radar chart based on the selected breed. The radar chart shows where the dog breed ranks on a 0-10 scale (0 being the lowest, 10 being the highest) based on height, weight, and life span characteristics.  
 <img src="https://github.com/bandaexpress/project_3_all_dogs_are_great/blob/ce5004bc6d247977e5e1baf6f198523feb79de6a/img/radar%20chart%20screenshot.png">
 
 We created a bar chart illustrating the most dominant dog traits among the 200+ breeds in the dataset. 
@@ -18,8 +18,13 @@ Finally, our group created a temperment filter. Users can select two traits, fro
 <img src="https://github.com/bandaexpress/project_3_all_dogs_are_great/blob/554a37d4d4d29b255b5e51222d4b0366acd7dd16/img/trait%20screenshot.png">
 
 # Instructions: 
-1. Go to ...
-2. Select a breed from the drop down menu
+1. Go to (github pages link!!)
+2. Choose your preferred shedding level. Then take a look at the dog breeds that fit your desired shedding level. 
+3. Select a dog breed (any one of your choosing, or perhaps one that fits your shedding level) from the drop down menu. Above the drop down, an image of your dog selection will populate along with the purpose they were breed for, temperment, and lifespan.
+4. Scroll down to see a radar chart displaying the characteristics of your breed selection.
+5. Preview the dominant traits chart to see which temperments are the most common. Hover over the bars to see a list of which dog breeds have that trait.
+6. Look at the scatter plot representing where each breed lies acoording to height and weight. Hovering over the data point, will show you which dog breed it represents.
+7. Next, you can see which dogs have your desired temperament traits. Choose two traits from the drop down menu, then click the 'Find Matches' button to return a list of the breeds that have both those traits. 
 
 # Data Visualization Track Requirements: (75 points)
 
@@ -56,3 +61,6 @@ Finally, our group created a temperment filter. Users can select two traits, fro
 # References: 
 - API used: https://www.thedogapi.com/
 - Documentation referenced: https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=bOoHBz-8t
+
+# Presentation:
+Link: https://docs.google.com/presentation/d/1dMlaANhYHr5NFGWC6mxYthdOjwvpDwFxqUX2S3Vbbug/edit?usp=sharing
