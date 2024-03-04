@@ -18,7 +18,7 @@ Finally, our group created a temperment filter. Users can select two traits, fro
 <img src="https://github.com/bandaexpress/project_3_all_dogs_are_great/blob/554a37d4d4d29b255b5e51222d4b0366acd7dd16/img/trait%20screenshot.png">
 
 # Instructions: 
-1. Go to (github pages link!!)
+1. Go to https://bandaexpress.github.io/project_3_all_dogs_are_great/ (Note: if you resize the window, reload the site)
 2. Choose your preferred shedding level. Then take a look at the dog breeds that fit your desired shedding level. 
 3. Select a dog breed (any one of your choosing, or perhaps one that fits your shedding level) from the drop down menu. Above the drop down, an image of your dog selection will populate along with the purpose they were breed for, temperment, and lifespan.
 4. Scroll down to see a radar chart displaying the characteristics of your breed selection.
