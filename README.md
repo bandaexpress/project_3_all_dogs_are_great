@@ -26,14 +26,17 @@ Finally, our group created a temperment filter. Users can select two traits, fro
 6. Look at the scatter plot representing where each breed lies acoording to height and weight. Hovering over the data point, will show you which dog breed it represents.
 7. Next, you can see which dogs have your desired temperament traits. Choose two traits from the drop down menu, then click the 'Find Matches' button to return a list of the breeds that have both those traits. 
 
+# Ethical Considerations:
+This project is featuring two free to use Dog APIs, so the only ethcial considerations we really had came from possibly sourcing the image. making sure that the photographer is properly credited and that the photo isn't scraped. No dogs were harmed in the making of this website. 
+
 # Data Visualization Track Requirements: (75 points)
 
 ## Data and Delivery (20 points)
 - The dataset contains at least 100 unique records. (5 points) ✓
 - A database is used to house the data (SQL, MongoDB, SQLite, etc.). (5 points) -not needed
 - The GitHub repo has a README.md that includes the following: (10 points) 
-  - An overview of the project and its purpose
-  - Instructions on how to use and interact with the project
+  - An overview of the project and its purpose  ✓
+  - Instructions on how to use and interact with the project  ✓
   - At least one paragraph summarizing efforts for ethical considerations made in the project
     - References for the data source(s)
     - References for any code used that is not your own
