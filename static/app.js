@@ -300,62 +300,117 @@ function createScatterPlot(data) {
 
 // Function to create a radar chart for a selected breed
 function createRadarChart(selectedBreedId) {
-  var rtx = document.getElementById('radarChart').getContext('2d');
+    var rtx = document.getElementById('radarChart').getContext('2d');
 
-  // Find the selected breed in the data using the ID
-  var breed = window.data.find(b => b.id === selectedBreedId);
+    // Find the selected breed in the data using the ID
+    var breed = window.data.find(b => b.id === selectedBreedId);
 
-  // Check if the breed is found
-  if (breed) {
-      // Extract specific attributes for the radar chart
-      var attributes = Object.keys(breed).filter(key => key !== 'id' && key !== 'name');
+    // Check if the breed is found
+    if (breed) {
+        // Extract specific attributes for the radar chart
+        var radarAttributes = ['height', 'weight', 'life_span'];
 
-      // Calculate a score for each attribute based on its value
-      var scores = attributes.map(key => {
-          // Arbitrary scale of 1-10, adjust as needed
-          return breed[key] ? Math.floor(Math.random() * 10) + 1 : 0;
-      });
+        // Extract data for the radar attributes
+        var radarData = radarAttributes.map(attr => {
+            // Convert 'height' and 'weight' to metric values
+            if (attr === 'height' || attr === 'weight') {
+                const range = breed[attr].metric.split(' - ');
+                const median = (parseFloat(range[0]) + parseFloat(range[1])) / 2;
+                // Scale the median to a score between 1 and 10
+                return scaleTo10(median, 0, 100);
+            }
+            // For 'life_span', use the average if a range is provided
+            else if (attr === 'life_span') {
+                const lifespanRange = breed[attr].split(' - ');
+                const median = (parseFloat(lifespanRange[0]) + parseFloat(lifespanRange[1])) / 2;
+                // Scale the median to a score between 1 and 10
+                return scaleTo10(median, 0, 100);
+            }
+        });
 
-      // Create the radar chart
-      new Chart(rtx, {
-          type: 'radar',
-          data: {
-              labels: attributes,
-              datasets: [{
-                  label: breed.name,
-                  data: scores,
-                  backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                  borderColor: 'rgba(255, 99, 132, 1)',
-                  borderWidth: 1
-              }]
-          },
-          options: {
-              scales: {
-                  r: {
-                      beginAtZero: true,
-                      max: 10 // Maximum score in the scale
-                  }
-              }
-          }
-      });
-  } else {
-      // Breed not found, handle this case (e.g., show an error message)
-      console.error('Selected breed not found:', selectedBreedId);
-  }
+        // Function to scale a value between 0 and 100 to a 1-10 range
+        function scaleTo10(value, min, max) {
+            const scaledValue = 1 + (value - min) / (max - min) * 9;
+            // Ensure the scaled value is between 1 and 10
+            return Math.min(10, Math.max(1, scaledValue));
+        }
+
+        // Create the radar chart
+        new Chart(rtx, {
+            type: 'radar',
+            data: {
+                labels: radarAttributes,
+                datasets: [{
+                    label: breed.name,
+                    data: radarData,
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        max: 10, // Maximum score in the scale
+                        pointLabels: {
+                            font: {
+                                size: 16 // Adjust font size for point labels
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+                                size: 16 // Adjust font size for legend labels
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                var label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                label += context.formattedValue;
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    } else {
+        // Breed not found, handle this case (e.g., show an error message)
+        console.error('Selected breed not found:', selectedBreedId);
+    }
 }
+
+// Function to scale a value between a minimum and maximum to a 1-10 range
+function scaleTo10(value, min, max) {
+    return 1 + (value - min) / (max - min) * 9;
+}
+
+// Ensure the onBreedSelectChange function is correctly assigned to the 'change' event of the dropdown
+document.getElementById('breedsDropdown').addEventListener('change', onBreedSelectChange);
+
+
 
 // Function to handle dropdown selection change
 function onBreedSelectChange() {
-  var selectedBreedId = parseInt(document.getElementById('breedsDropdown').value);
+    var selectedBreedId = parseInt(document.getElementById('breedsDropdown').value);
 
-  // Clear previous radar chart if exists
-  var existingChart = Chart.getChart('radarChart');
-  if (existingChart) {
-      existingChart.destroy();
-  }
+    // Clear previous radar chart if exists
+    var existingChart = Chart.getChart('radarChart');
+    if (existingChart) {
+        existingChart.destroy();
+    }
 
-  // Create a new radar chart for the selected breed
-  createRadarChart(selectedBreedId);
+    // Create a new radar chart for the selected breed
+    createRadarChart(selectedBreedId);
 }
 
 // Load the JSON data from the file
@@ -509,66 +564,6 @@ function createScatterPlot(data) {
             }
         }
     });
-}
-
-// Function to create a radar chart for a selected breed
-function createRadarChart(selectedBreedId) {
-    var ctx = document.getElementById('radarChart').getContext('2d');
-
-    // Find the selected breed in the data using the ID
-    var breed = window.data.find(b => b.id === selectedBreedId);
-
-    // Check if the breed is found
-    if (breed) {
-        // Extract specific attributes for the radar chart
-        var attributes = Object.keys(breed).filter(key => key !== 'id' && key !== 'name');
-
-        // Calculate a score for each attribute based on its value
-        var scores = attributes.map(key => {
-            // Arbitrary scale of 1-10, adjust as needed
-            return breed[key] ? Math.floor(Math.random() * 10) + 1 : 0;
-        });
-
-        // Create the radar chart
-        new Chart(ctx, {
-            type: 'radar',
-            data: {
-                labels: attributes,
-                datasets: [{
-                    label: breed.name,
-                    data: scores,
-                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    r: {
-                        beginAtZero: true,
-                        max: 10 // Maximum score in the scale
-                    }
-                }
-            }
-        });
-    } else {
-        // Breed not found, handle this case (e.g., show an error message)
-        console.error('Selected breed not found:', selectedBreedId);
-    }
-}
-
-// Function to handle dropdown selection change
-function onBreedSelectChange() {
-    var selectedBreedId = parseInt(document.getElementById('breedsDropdown').value);
-
-    // Clear previous radar chart if exists
-    var existingChart = Chart.getChart('radarChart');
-    if (existingChart) {
-        existingChart.destroy();
-    }
-
-    // Create a new radar chart for the selected breed
-    createRadarChart(selectedBreedId);
 }
 
 // Load the JSON data from the file
