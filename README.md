@@ -58,7 +58,7 @@ This project is featuring two free to use Dog APIs, so the only ethical consider
   
 # Both Track Requirements
 ## Group Presentation (25 points)
-- All group members speak during the presentation. (5 points)
+- All group members speak during the presentation. (5 points) ✓
 - The content is relevant to the project. (5 points)
 - The presentation maintains audience interest. (5 points)
 - Content, transitions, and conclusions flow smoothly within any time restrictions. (10 points)
