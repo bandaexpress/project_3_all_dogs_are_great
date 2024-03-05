@@ -22,7 +22,7 @@ Finally, our group created a temperament filter. Users can select two traits, fr
 # Instructions: 
 1. Go to https://bandaexpress.github.io/project_3_all_dogs_are_great/ (Note: if you resize the window, reload the site)
 2. Choose your preferred shedding level. Then, look at the dog breeds that populate below and fit your desired shedding level. 
-3. Select a dog breed (any one of your choosing, or perhaps one that fits your shedding level) from the drop-down menu. Above the drop down, an image of your dog selection will populate along with the purpose they were breed for, temperament, and lifespan.
+3. Select a dog breed (any one of your choosing, or perhaps one that fits your shedding level) from the drop-down menu. Above the drop down, an image of your dog selection will populate along with the purpose they were bred for, temperament, and lifespan.
 4. Scroll down to see a radar chart displaying the characteristics of your breed selection.
 5. Preview the dominant traits chart to see which temperaments are the most common. Hover over the bars to see a list of which dog breeds have that trait.
 6. Look at the scatter plot representing where each breed lies according to height and weight. Hovering over the data point, will show you which dog breed it represents.
