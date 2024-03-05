@@ -65,8 +65,8 @@ This project is featuring two free to use Dog APIs, so the only ethical consider
 
 # References: 
 - APIs used: 
-- https://www.thedogapi.com/
-- https://www.api-ninjas.com/api/dogs 
+  - https://www.thedogapi.com/
+  - https://www.api-ninjas.com/api/dogs 
 - Documentation referenced: https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=bOoHBz-8t
 - Libraries used: 
   - Chart.js https://www.chartjs.org 
