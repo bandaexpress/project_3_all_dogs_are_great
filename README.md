@@ -29,7 +29,7 @@ Finally, our group created a temperament filter. Users can select two traits, fr
 7. Next, you can see which dogs have your desired temperament traits. Choose two traits from the drop-down menu, then click the 'Find Matches' button to return a list of the breeds that have both those traits. 
 
 # Ethical Considerations:
-This project is featuring two free to use Dog APIs, so the only ethical considerations we really had were for sourcing the image. Making sure that the photographer is properly credited and that the photo isn't scraped. No dogs were harmed in the making of this website. 
+This project features two free to use Dog APIs, so the only ethical considerations we really had were for sourcing the image. Making sure that the photographer is properly credited and that the photo isn't scraped. No dogs were harmed in the making of this website. 
 
 # Data Visualization Track Requirements: (75 points)
 
